@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meowing Cats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click on the cat to hear it meow!</h1>
+    
+    <img id="cat" src="fisha.jpg" alt="Fisha the cat" onclick="meow()">
+    
+    <script>
+        function meow() {
+            let audio = new Audio('meow.m4a'); // Используем файл с расширением .m4a
+            audio.play();
+            
+            // Меняем изображение котика при клике
+            let cat = document.getElementById('cat');
+            cat.src = cat.src.includes('fisha.jpg') ? 'yasha.jpg' : 'fisha.jpg'; // Переключаем картинки котиков
+        }
+    </script>
+
+</body>
+</html>
